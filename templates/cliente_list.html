@@ -1,0 +1,28 @@
+{% extends 'list.html' %}
+{% load static %}
+{% block table %}
+    <thead>
+    <tr>
+        <th style="width: 5%">Id</th>
+        <th style="width: 15%">Nombres</th>
+        <th style="width: 10%">Telefono</th>
+        <th class="text-center" style="width: 10%"><em class="fa fa-cog"></em></th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+{% endblock %}
+
+{% block extra %}
+    <script src="{% static 'apps/cliente/cliente_list.js' %}"></script>
+    <script src="{% static 'apps/cliente/cliente.js' %}"></script>
+    <script>
+        function validaNumericos(event) {
+            console.log(event.charCode);
+            if (event.charCode >= 48 && event.charCode <= 57 || event.charCode === 43) {
+                return true;
+            }
+            return false;
+        }
+    </script>
+{% endblock %}
